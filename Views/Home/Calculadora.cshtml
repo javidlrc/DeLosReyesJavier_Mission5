@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "Calculadora";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .pJav {
+        font-size: 60px;
+        color: #333;
+        margin-top: 0px;
+    }
+</style>
+
+<br />
+<h1>Want to become an expert at songwriting?</h1>
+<br />
+<h2>I can tutor you so you can become the next Taylor Swift (or Kanye if you are a guy)!</h2>
+
+<h2>I charge $50 an hour, just tell me how many hours you need me to teach you below:</h2>
+<input type="text" id="hours" name="hours">
+<br>
+<button id="buttonJavi" >How much bread is this?</button>
+<br>
+<br>
+<br>
+<p id="output" class="pJav"></p>
+<br>
+<p id="outputCharges" style="font-size: 80px;"></p>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#buttonJavi").click(function () {
+            var hours = $("#hours").val();
+            if (isNaN(hours) || parseFloat(hours) <= 0) {
+                $("#output").text("What u think u doing bruv, put a correct number");
+                $("#outputCharges").text("Find God");
+            } else {
+                var charges = hours * 50;
+                $("#output").text("I will take from you");
+                $("#outputCharges").text("$" + charges);
+            }
+        });
+    });
+</script>
